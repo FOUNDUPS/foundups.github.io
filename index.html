@@ -1,186 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FOUNDUPS</title>
-  <meta name="description" content="AI + Blockchain for Democratization of Value">
-  <meta name="theme-color" content="#0a0a0a">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>FOUNDUPS</title>
+    <meta name="description" content="AI + Blockchain for Democratization of Value">
+    <meta name="theme-color" content="#0a0a0a">
+  
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://foundups.org">
+    <meta property="og:title" content="FOUNDUPS">
+    <meta property="og:description" content="AI + Blockchain for Democratization of Value">
+    <meta property="og:image" content="https://foundups.com/logo-dog.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:site_name" content="FOUNDUPS">
+  
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@foundupscom">
+    <meta name="twitter:title" content="FOUNDUPS">
+    <meta name="twitter:description" content="AI + Blockchain for Democratization of Value">
+    <meta name="twitter:image" content="https://foundups.com/logo-dog.png">
+  
+    <link rel="canonical" href="https://foundups.org">
+    <link rel="icon" type="image/png" href="https://foundups.com/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="https://foundups.com/logo-dog.png">
+  
+    <style>
+          *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://foundups.org">
-  <meta property="og:title" content="FOUNDUPS">
-  <meta property="og:description" content="AI + Blockchain for Democratization of Value">
-  <meta property="og:image" content="https://foundups.com/logo-dog.png">
-  <meta property="og:image:width" content="512">
-  <meta property="og:image:height" content="512">
-  <meta property="og:site_name" content="FOUNDUPS">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@foundupscom">
-  <meta name="twitter:title" content="FOUNDUPS">
-  <meta name="twitter:description" content="AI + Blockchain for Democratization of Value">
-  <meta name="twitter:image" content="https://foundups.com/logo-dog.png">
-
-  <link rel="canonical" href="https://foundups.org">
-  <link rel="icon" type="image/png" href="https://foundups.com/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="https://foundups.com/logo-dog.png">
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0a0a0a;
-      color: #e4e2ec;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .container {
-      text-align: center;
-      max-width: 400px;
-    }
-
-    .logo {
-      width: 120px;
-      height: 120px;
-      border-radius: 24px;
-      margin-bottom: 1.5rem;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-
-    .message {
-      color: #9e9baf;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .manual-link {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      background: rgba(124, 92, 252, 0.15);
-      border: 1px solid rgba(124, 92, 252, 0.3);
-      border-radius: 8px;
-      color: #7c5cfc;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
-    }
-
-    .manual-link:hover {
-      background: rgba(124, 92, 252, 0.25);
-      border-color: rgba(124, 92, 252, 0.5);
-    }
-
-    .bot-notice {
-      display: none;
-      margin-top: 2rem;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      font-size: 0.85rem;
-      color: #6b6880;
-    }
-  </style>
-
-  <script>
-    (function() {
-      // Known bot/scraper user agents
-      var botPatterns = [
-        'LinkedInBot',
-        'Twitterbot',
-        'facebookexternalhit',
-        'Facebot',
-        'Discordbot',
-        'Slackbot',
-        'WhatsApp',
-        'TelegramBot',
-        'Googlebot',
-        'bingbot',
-        'Baiduspider',
-        'YandexBot',
-        'DuckDuckBot',
-        'Applebot',
-        'PinterestBot',
-        'redditbot',
-        'Embedly',
-        'Quora Link Preview',
-        'Showyoubot',
-        'outbrain',
-        'vkShare',
-        'W3C_Validator',
-        'crawler',
-        'spider',
-        'bot'
-      ];
-
-      var userAgent = navigator.userAgent || '';
-      var isBot = botPatterns.some(function(pattern) {
-        return userAgent.toLowerCase().indexOf(pattern.toLowerCase()) !== -1;
-      });
-
-      // Discord invite URL
-      var discordUrl = 'https://discord.com/invite/cpRA5Mz';
-
-      if (!isBot) {
-        // Human visitor - redirect immediately
-        window.location.replace(discordUrl);
-      } else {
-        // Bot/scraper - show bot notice, no redirect
-        document.addEventListener('DOMContentLoaded', function() {
-          var notice = document.querySelector('.bot-notice');
-          if (notice) notice.style.display = 'block';
-        });
-      }
-    })();
-  </script>
-
-  <!-- Fallback meta refresh for humans (bots blocked by JS above) -->
-  <noscript>
-    <meta http-equiv="refresh" content="1;url=https://discord.com/invite/cpRA5Mz">
-  </noscript>
-</head>
-<body>
-  <div class="container">
-    <img src="https://foundups.com/logo-dog.png" alt="FOUNDUPS" class="logo">
-    <p class="message">Redirecting to FOUNDUPS community...</p>
-    <a href="https://discord.com/invite/cpRA5Mz" class="manual-link">Click here if not redirected</a>
-
-    <div class="bot-notice">
-      Bot/scraper detected. This page serves Open Graph metadata for link previews.
-      Human visitors are redirected to our Discord community.
-    </div>
-  </div>
-
-  <!-- Additional fallback redirect -->
-  <script>
-    // Double-check redirect for humans after DOM load
-    (function() {
-      var botPatterns = ['LinkedInBot', 'Twitterbot', 'facebookexternalhit', 'Discordbot', 'bot', 'crawler', 'spider'];
-      var ua = (navigator.userAgent || '').toLowerCase();
-      var isBot = botPatterns.some(function(p) { return ua.indexOf(p.toLowerCase()) !== -1; });
-
-      if (!isBot) {
-        setTimeout(function() {
-          if (window.location.hostname !== 'discord.gg') {
-            window.location.replace('https://discord.com/invite/cpRA5Mz');
+          body {
+                  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                  background: #0a0a0a;
+                  color: #e4e2ec;
+                  min-height: 100vh;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 2rem;
           }
-        }, 500);
+
+          .container { text-align: center; max-width: 400px; }
+
+          .logo {
+                  width: 120px;
+                  height: 120px;
+                  border-radius: 24px;
+                  margin-bottom: 1.5rem;
+                  animation: pulse 2s ease-in-out infinite;
+          }
+
+          @keyframes pulse {
+                  0%, 100% { opacity: 1; }
+                  50% { opacity: 0.7; }
+          }
+
+          .brand {
+                  font-size: 1.4rem;
+                  font-weight: 700;
+                  letter-spacing: 0.05em;
+                  margin-bottom: 0.75rem;
+                  color: #e4e2ec;
+          }
+
+          .message {
+                  color: #9e9baf;
+                  font-size: 1rem;
+                  line-height: 1.6;
+          }
+
+          .manual-link {
+                  display: inline-block;
+                  margin-top: 1.5rem;
+                  padding: 0.75rem 1.5rem;
+                  background: rgba(124, 92, 252, 0.15);
+                  border: 1px solid rgba(124, 92, 252, 0.3);
+                  border-radius: 8px;
+                  color: #7c5cfc;
+                  text-decoration: none;
+                  font-size: 0.9rem;
+                  transition: all 0.2s ease;
+          }
+
+          .manual-link:hover {
+                  background: rgba(124, 92, 252, 0.25);
+                  border-color: rgba(124, 92, 252, 0.5);
+          }
+
+      .bot-notice {
+              display: none;
+              margin-top: 2rem;
+              padding: 1rem;
+              background: rgba(255, 255, 255, 0.05);
+              border-radius: 8px;
+              font-size: 0.85rem;
+              color: #6b6880;
       }
-    })();
-  </script>
-</body>
-</html>
+        </style>
+
+      <script>
+            (function() {
+                    var botPatterns = [
+                              'LinkedInBot', 'Twitterbot', 'facebookexternalhit', 'Facebot',
+                              'Discordbot', 'Slackbot', 'WhatsApp', 'TelegramBot',
+                              'Googlebot', 'bingbot', 'Baiduspider', 'YandexBot',
+                              'DuckDuckBot', 'Applebot', 'PinterestBot', 'redditbot',
+                              'Embedly', 'Quora Link Preview', 'Showyoubot', 'outbrain',
+                              'vkShare', 'W3C_Validator', 'crawler', 'spider', 'bot'
+                            ];
+
+                    var userAgent = navigator.userAgent || '';
+                    var isBot = botPatterns.some(function(pattern) {
+                              return userAgent.toLowerCase().indexOf(pattern.toLowerCase()) !== -1;
+                    });
+
+                    var discordUrl = 'https://discord.com/invite/cpRA5Mz';
+
+                    if (!isBot) {
+                              // Human visitor — show branded splash for 2.5s then redirect
+                              setTimeout(function() {
+                                          window.location.replace(discordUrl);
+                              }, 2500);
+                    } else {
+                              // Bot/scraper — show OG metadata, no redirect
+                              document.addEventListener('DOMContentLoaded', function() {
+                                          var notice = document.querySelector('.bot-notice');
+                                          if (notice) notice.style.display = 'block';
+                              });
+                    }
+            })();
+      </script>
+
+      <!-- Fallback for no-JS browsers -->
+      <noscript>
+            <meta http-equiv="refresh" content="3;url=https://discord.com/invite/cpRA5Mz">
+      </noscript>
+  </head>
+  <body>
+      <div class="container">
+            <img src="https://foundups.com/logo-dog.png" alt="FOUNDUPS" class="logo">
+            <div class="brand">FOUND<span style="color:#7c5cfc">UPS</span>span></div>div>
+            <p class="message">Redirecting to FOUNDUPS community...</p>p>
+            <a href="https://discord.com/invite/cpRA5Mz" class="manual-link">Click here if not redirected</a>a>
+            <div class="bot-notice">
+                    Bot/scraper detected. This page serves Open Graph metadata for link previews.
+                    Human visitors are redirected to our Discord community.
+            </div>div>
+      </div>div>
+  </body>
+</html>html>
+  </body>
+      </noscript>
+      </script>
+    </style></title>
+  </head>
