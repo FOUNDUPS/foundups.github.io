@@ -3,3 +3,15 @@
 .project-story{max-width:1230px;margin:0 auto 3.5rem;padding:0 4%}.project-story figure{max-width:none;margin:0}.project-story img{width:100%;height:auto;display:block;border-radius:18px}.project-story figcaption{max-width:none;color:#496365;font-size:.875rem;text-align:left;margin:.8rem 0}.story-copy{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:start;padding:2.5rem 0 0}.story-copy h2{font-size:clamp(1.9rem,4vw,3rem)}.story-copy p{margin:0;line-height:1.85}@media(max-width:700px){.story-copy{display:block;padding-top:1.5rem}.story-copy h2{margin-bottom:1rem}.project-story{margin-bottom:2.5rem}.project-story img{border-radius:10px}}
 .build-branch>.map-node>h3{max-width:100%;font-size:clamp(1.3rem,2vw,1.65rem);overflow-wrap:normal;line-height:1.25}
 .top-community{margin:1.4rem auto 0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+
+/* Community front door, above the existing ecosystem map. */
+.map-hero .front-intro{max-width:42rem;margin:0 auto;color:#374f51;font-size:clamp(1rem,2vw,1.22rem);line-height:1.55}
+.front-doors{width:min(100%,49rem);margin:1.65rem auto 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;list-style:none}
+.front-doors li{min-width:0}.front-doors .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;max-width:100%;margin:0;padding:.65rem 1.05rem;font-size:1rem;text-align:center}
+.front-doors .door-secondary{background:#f4faf7;border:1px solid #486966;color:#173438}.front-doors .door-secondary:hover{background:#e3f3eb}
+.front-doors p{margin:.65rem auto 0;font-size:.98rem;line-height:1.45;color:#374f51;max-width:23ch}
+.map-hero .front-founder{max-width:43rem;margin:1.5rem auto 0;font-size:.95rem;color:#374f51}
+.front-founder a{display:inline-block;color:#175848;font-weight:700;text-decoration:underline;text-underline-offset:.2em}
+.front-map{text-align:center;margin:1rem auto 0;padding:1.35rem 5% 0}.front-map h2{font-size:clamp(1.4rem,3vw,2.25rem);margin:0}.front-map p{font-size:1rem;color:#374f51;margin:.35rem auto 0;max-width:43rem}
+.front-doors a:focus-visible,.front-founder a:focus-visible{outline:3px solid #1c7665;outline-offset:4px}
+@media(max-width:42rem){.front-doors{grid-template-columns:1fr;max-width:23rem;gap:.72rem}.front-doors li{display:grid;justify-items:center;border-bottom:1px solid #c8ded8;padding:0 0 .75rem}.front-doors .button{width:100%}.front-doors p{max-width:34ch;margin:.45rem auto 0}.front-map{margin:.6rem auto 0}}

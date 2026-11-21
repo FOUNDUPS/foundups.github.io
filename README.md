@@ -1,21 +1,16 @@
 # foundups.github.io
 
-Static bridge page for [FoundUPS](https://foundups.com/) — served via GitHub Pages at `https://foundups.github.io/`.
+Static source for the trilingual public [FoundUps.org](https://foundups.org/) community landing and ecosystem map, hosted on GitHub Pages.
 
-## What this is
+- **Join Discord** opens the existing FOUNDUPS server invitation.
+- **Join FoundUps** goes to the existing closed-alpha invite and sign-in gateway on FoundUps.com.
+- **Browse Play** goes to Play FoundUps Mall; sign-in is required for member access. The landing does not replace admission or open member content to guests.
+- The ecosystem map retains the EDUIT, eSingularity, FoundUps, and independent YUMORI entries as proposed or active where labeled.
 
-A minimal, mobile-friendly link page that routes visitors to the correct FoundUPS destinations:
+## Editing and preview
 
-- **FoundUps.com** — Main site
-- **pfMALL** — Play FoundUps dApp
-- **Discord** — Community
-- **Wiki** — Documentation
-- **LinkedIn** — Professional presence
-
-## Editing
-
-Edit `index.html` directly. No build step — pure static HTML/CSS served by GitHub Pages.
+Edit `index.html`, `style.css` and the existing English, Japanese and Portuguese dictionaries in `app.js`. The site has no build step. Preview as static files and verify localized labels, outbound links, native details controls and the narrow-screen layout. Keep the custom domain `CNAME` unchanged. Change review does not itself deploy the repository.
 
 ## History
 
-This repo previously hosted an Ethereum Classic (ETC) gatsby site. That content has been archived and replaced with the current bridge page.
+This repository previously hosted an Ethereum Classic Gatsby site. That content has been archived.
